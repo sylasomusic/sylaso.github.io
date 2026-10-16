@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="Official website of SYLASO. Discover the latest music, videos, biography, and booking information.">
+<title>SYLASO | Official Artist Website</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+--bg: #080808;
+--surface: #111111;
+--surface-2: #191919;
+--gold: #d6ae62;
+--text: #f7f5f0;
+--muted: #999999;
+--border: rgba(255,255,255,.10);
+--radius: 14px;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html {
+scroll-behavior: smooth;
+scroll-padding-top: 90px;
+}
+
+body {
+background: var(--bg);
+color: var(--text);
+font-family: "DM Sans", sans-serif;
+line-height: 1.7;
+overflow-x: hidden;
+}
+
+a {
+color: inherit;
+text-decoration: none;
+}
+
+button, input, textarea {
+font: inherit;
+}
+
+img {
+display: block;
+width: 100%;
+object-fit: cover;
+}
+
+.container {
+width: min(1160px, 90%);
+margin-inline: auto;
+}
+
+.gold { color: var(--gold); }
+
+.eyebrow {
+color: var(--gold);
+font-size: .75rem;
+font-weight: 700;
+letter-spacing: 4px;
+text-transform: uppercase;
+margin-bottom: 12px;
+}
+
+h1, h2, h3, .logo {
+font-family: "Oswald", sans-serif;
+text-transform: uppercase;
+line-height: 1.1;
+}
+
+h2 {
+font-size: clamp(2rem, 5vw, 3.5rem);
+letter-spacing: 1px;
+}
+
+.section {
+padding: 100px 0;
+}
+
+.section-heading {
+margin-bottom: 42px;
+}
+
+.section-heading p {
+color: var(--muted);
+max-width: 550px;
+margin-top: 14px;
+}
+
+/* NAVIGATION */
+
+.navbar {
+position: sticky;
+top: 0;
+z-index: 100;
+background: rgba(8,8,8,.92);
+backdrop-filter: blur(16px);
+border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+min-height: 76px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 20px;
+}
+
+.logo {
+font-size: 2rem;
+font-weight: 700;
+letter-spacing: 4px;
+}
+
+.nav-links {
+display: flex;
+align-items: center;
+gap: 28px;
+list-style: none;
+}
+
+.nav-links a {
+color: #d2d2d2;
+font-size: .85rem;
+transition: color .2s;
+}
+
+.nav-links a:hover {
+color: var(--gold);
+}
+
+.menu-toggle {
+display: none;
+border: 1px solid var(--border);
+color: white;
+background: var(--surface);
+padding: 8px 12px;
+border-radius: 8px;
+cursor: pointer;
+}
+
+/* BUTTONS */
+
+.btn {
+display: inline-flex;
+justify-content: center;
+align-items: center;
+gap: 10px;
+padding: 13px 23px;
+border-radius: 4px;
+border: 1px solid var(--gold);
+font-size: .82rem;
+font-weight: 700;
+letter-spacing: 1px;
+text-transform: uppercase;
+cursor: pointer;
+transition: transform .2s, background .2s;
+}
+
+.btn:hover {
+transform: translateY(-3px);
+}
+
+.btn-primary {
+background: var(--gold);
+color: #090909;
+}
+
+.btn-outline {
+color: var(--text);
+background: transparent;
+}
+
+.btn-outline:hover {
+background: var(--gold);
+color: #090909;
+}
+
+/* HERO */
+
+.hero {
+min-height: 680px;
+min-height: min(800px, 88svh);
+display: flex;
+align-items: center;
+position: relative;
+isolation: isolate;
+overflow: hidden;
+background:
+linear-gradient(90deg, rgba(0,0,0,.96) 0%,
+rgba(0,0,0,.76) 48%, rgba(0,0,0,.22) 100%),
+linear-gradient(0deg, var(--bg), transparent 30%),
+url("https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=2000&q=85")
+center 40% / cover no-repeat;
+}
+
+.hero::after {
+content: "";
+position: absolute;
+inset: 0;
+z-index: -1;
+background: radial-gradient(ellipse at 75% 45%,
+rgba(214,174,98,.13), transparent 50%);
+}
+
+.hero-content {
+max-width: 750px;
+padding: 100px 0;
+}
+
+.hero h1 {
+font-size: clamp(4.5rem, 13vw, 9.5rem);
+letter-spacing: 3px;
+font-weight: 700;
+margin: 12px 0;
+overflow-wrap: anywhere;
+}
+
+.hero h1 span {
+color: var(--gold);
+}
+
+.hero-tagline {
+font-size: clamp(1rem, 2vw, 1.3rem);
+color: #ddd;
+max-width: 500px;
+margin: 20px 0 32px;
+}
+
+.hero-buttons {
+display: flex;
+flex-wrap: wrap;
+gap: 14px;
+}
+
+.hero-note {
+margin-top: 55px;
+color: #aaa;
+font-size: .72rem;
+letter-spacing: 3px;
+text-transform: uppercase;
+}
+
+/* RELEASE */
+
+.release-grid {
+display: grid;
+grid-template-columns: minmax(250px, .85fr) 1.15fr;
+gap: 55px;
+align-items: center;
+}
+
+.album-cover {
+aspect-ratio: 1;
+border-radius: var(--radius);
+overflow: hidden;
+background: var(--surface-2);
+border: 1px solid var(--border);
+box-shadow: 0 25px 70px rgba(0,0,0,.4);
+}
+
+.album-cover img {
+height: 100%;
+transition: transform .6s;
+}
+
+.album-cover:hover img {
+transform: scale(1.04);
+}
+
+.release-info h3 {
+font-size: clamp(2rem, 5vw, 3.5rem);
+margin-bottom: 10px;
+}
+
+.release-meta {
+color: var(--muted);
+margin-bottom: 25px;
+}
+
+.audio-label {
+font-size: .78rem;
+color: var(--gold);
+text-transform: uppercase;
+letter-spacing: 2px;
+margin-bottom: 10px;
+}
+
+audio {
+width: 100%;
+margin-bottom: 25px;
+accent-color: var(--gold);
+}
+
+.stream-links {
+display: flex;
+flex-wrap: wrap;
+gap: 10px;
+}
+
+.stream-links .btn {
+font-size: .72rem;
+padding: 11px 15px;
+}
+
+/* ABOUT */
+
+.about {
+background: #101010;
+border-top: 1px solid var(--border);
+border-bottom: 1px solid var(--border);
+}
+
+.about-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 60px;
+align-items: center;
+}
+
+.about-image {
+height: 520px;
+border-radius: var(--radius);
+overflow: hidden;
+position: relative;
+}
+
+.about-image img {
+height: 100%;
+filter: saturate(.75);
+}
+
+.about-copy p {
+color: #b6b6b6;
+margin: 20px 0;
+}
+
+.stats {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 15px;
+margin-top: 35px;
+padding-top: 25px;
+border-top: 1px solid var(--border);
+}
+
+.stat strong {
+display: block;
+font-family: "Oswald", sans-serif;
+font-size: 1.9rem;
+color: var(--gold);
+}
+
+.stat span {
+color: var(--muted);
+font-size: .73rem;
+}
+
+/* GALLERY */
+
+.gallery-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 18px;
+}
+
+.gallery-card {
+position: relative;
+overflow: hidden;
+border-radius: 9px;
+background: var(--surface);
+border: 1px solid var(--border);
+}
+
+.gallery-card img {
+aspect-ratio: 4 / 3;
+transition: transform .5s, filter .5s;
+filter: brightness(.78);
+}
+
+.gallery-card:hover img {
+transform: scale(1.06);
+filter: brightness(1);
+}
+
+.gallery-caption {
+padding: 18px;
+}
+
+.gallery-caption h3 {
+font-size: 1.1rem;
+margin-bottom: 5px;
+}
+
+.gallery-caption p {
+font-size: .8rem;
+color: var(--muted);
+}
+
+.video-placeholder {
+position: relative;
+display: block;
+background: #171717;
+}
+
+.play-icon {
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+width: 56px;
+height: 56px;
+border: 1px solid rgba(255,255,255,.7);
+border-radius: 50%;
+display: grid;
+place-items: center;
+color: white;
+background: rgba(0,0,0,.45);
+font-size: 1.2rem;
+}
+
+/* BOOKING */
+
+.contact {
+background:
+radial-gradient(ellipse at 0% 100%,
+rgba(214,174,98,.08), transparent 50%),
+#101010;
+border-top: 1px solid var(--border);
+}
+
+.contact-grid {
+display: grid;
+grid-template-columns: .8fr 1.2fr;
+gap: 70px;
+}
+
+.contact-copy > p {
+color: var(--muted);
+margin: 20px 0 30px;
+}
+
+.social-links {
+display: flex;
+flex-wrap: wrap;
+gap: 12px;
+margin-top: 24px;
+}
+
+.social-links a {
+padding: 9px 13px;
+border: 1px solid var(--border);
+border-radius: 4px;
+font-size: .8rem;
+transition: border-color .2s, color .2s;
+}
+
+.social-links a:hover {
+color: var(--gold);
+border-color: var(--gold);
+}
+
+.booking-form {
+display: grid;
+gap: 18px;
+}
+
+.form-row {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 15px;
+}
+
+.field label {
+display: block;
+font-size: .8rem;
+margin-bottom: 8px;
+color: #d4d4d4;
+}
+
+.field input,
+.field textarea {
+width: 100%;
+padding: 14px;
+background: #080808;
+border: 1px solid #333;
+border-radius: 4px;
+color: white;
+outline: none;
+}
+
+.field input:focus,
+.field textarea:focus {
+border-color: var(--gold);
+}
+
+.field textarea {
+resize: vertical;
+min-height: 140px;
+}
+
+.form-note {
+color: var(--muted);
+font-size: .76rem;
+}
+
+/* FOOTER */
+
+footer {
+border-top: 1px solid var(--border);
+padding: 30px 0;
+}
+
+.footer-inner {
+display: flex;
+justify-content: space-between;
+align-items: center;
+gap: 20px;
+flex-wrap: wrap;
+}
+
+.footer-inner p {
+color: var(--muted);
+font-size: .8rem;
+}
+
+.back-top {
+color: var(--gold);
+font-size: .8rem;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+.nav-links {
+gap: 15px;
+}
+
+.nav-links a {
+font-size: .76rem;
+}
+
+.release-grid,
+.about-grid,
+.contact-grid {
+grid-template-columns: 1fr;
+gap: 35px;
+}
+
+.album-cover {
+max-width: 500px;
+margin-inline: auto;
+}
+
+.about-image {
+height: 400px;
+}
+
+.gallery-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+
+.contact-grid {
+gap: 45px;
+}
+}
+
+@media (max-width: 600px) {
+.section {
+padding: 70px 0;
+}
+
+.nav-inner {
+min-height: 68px;
+}
+
+.logo {
+font-size: 1.65rem;
+}
+
+.menu-toggle {
+display: block;
+}
+
+.nav-links {
+display: none;
+position: absolute;
+top: 68px;
+left: 0;
+right: 0;
+background: #0c0c0c;
+border-bottom: 1px solid var(--border);
+padding: 18px 5%;
+flex-direction: column;
+align-items: stretch;
+gap: 0;
+}
+
+.nav-links.open {
+display: flex;
+}
+
+.nav-links a {
+display: block;
+padding: 12px 0;
+font-size: .9rem;
+}
+
+.hero {
+min-height: 650px;
+background-position: 58% center;
+}
+
+.hero-content {
+padding: 70px 0;
+}
+
+.hero h1 {
+font-size: clamp(4rem, 17vw, 6rem);
+}
+
+.hero-note {
+margin-top: 38px;
+}
+
+.gallery-grid {
+grid-template-columns: 1fr;
+}
+
+.gallery-card img {
+aspect-ratio: 16 / 10;
+}
+
+.form-row {
+grid-template-columns: 1fr;
+}
+
+.stats {
+gap: 8px;
+}
+
+.stat strong {
+font-size: 1.5rem;
+}
+
+.footer-inner {
+flex-direction: column;
+align-items: flex-start;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+html { scroll-behavior: auto; }
+*, *::before, *::after {
+animation-duration: .01ms !important;
+transition-duration: .01ms !important;
+}
+}
+</style>
+</head>
+
+<body id="top">
+
+<!-- NAVIGATION -->
+<header class="navbar">
+<div class="container nav-inner">
+<a href="#top" class="logo" aria-label="SYLASO home">
+SYLA<span class="gold">SO</span>
+</a>
+
+<button class="menu-toggle" aria-label="Open navigation"
+aria-expanded="false" aria-controls="nav-links">
+☰ Menu
+</button>
+
+<nav aria-label="Main navigation">
+<ul class="nav-links" id="nav-links">
+<li><a href="#music">Music</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#gallery">Media</a></li>
+<li><a href="#contact">Booking</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<p class="eyebrow">Official Artist Website</p>
+
+<h1>SYLA<span>SO</span></h1>
+
+<p class="hero-tagline">
+Real stories. African rhythms. Global sounds.
+Experience the sound of hip-hop and Afrobeats.
+</p>
+
+<div class="hero-buttons">
+<a class="btn btn-primary" href="#music">
+▶ Listen Now
+</a>
+<a class="btn btn-outline" href="#about">
+Discover My Story
+</a>
+</div>
+
+<p class="hero-note">Ghana · Afrobeats · Hip-Hop · Culture</p>
+</div>
+</div>
+</section>
+
+<!-- LATEST RELEASE -->
+<section class="section" id="music">
+<div class="container">
+<div class="section-heading">
+<p class="eyebrow">The Sound</p>
+<h2>Latest <span class="gold">Release</span></h2>
+<p>Discover the music, feel the rhythm, and stream your favourite tracks.</p>
+</div>
+
+<div class="release-grid">
+<div class="album-cover">
+<!-- Replace with your official cover artwork -->
+<img
+src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=900&q=85"
+alt="SYLASO featured release artwork">
+</div>
+
+<div class="release-info">
+<p class="eyebrow">Featured Track</p>
+<!-- Replace with your actual song title -->
+<h3>Your <span class="gold">Next Hit</span></h3>
+<p class="release-meta">SYLASO · Single · Official Release</p>
+
+<p class="audio-label">Preview the track</p>
+
+<!-- Put your MP3 file in the same folder and name it track.mp3 -->
+<audio controls preload="none">
+<source src="track.mp3" type="audio/mpeg">
+Your browser does not support audio playback.
+</audio>
+
+<div class="stream-links">
+<a class="btn btn-outline"
+href="https://open.spotify.com/"
+target="_blank" rel="noopener noreferrer">
+Spotify ↗
+</a>
+
+<a class="btn btn-outline"
+href="https://music.apple.com/"
+target="_blank" rel="noopener noreferrer">
+Apple Music ↗
+</a>
+
+<a class="btn btn-outline"
+href="https://audiomack.com/"
+target="_blank" rel="noopener noreferrer">
+Audiomack ↗
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section class="section about" id="about">
+<div class="container about-grid">
+<div class="about-image">
+<!-- Replace with a professional artist portrait -->
+<img
+src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=1000&q=85"
+alt="Artist portrait placeholder">
+</div>
+
+<div class="about-copy">
+<p class="eyebrow">Behind The Music</p>
+<h2>The Story of <span class="gold">SYLASO</span></h2>
+
+<p>
+SYLASO is a Ghanaian music artist blending the energy of
+hip-hop with the infectious rhythms of Afrobeats. Driven
+by creativity, culture, and authentic storytelling, his
+sound brings African influences to a global audience.
+</p>
+
+<p>
+Every record tells a story. Every performance creates a
+connection. From the studio to the stage, SYLASO continues
+to build a sound that reflects ambition, identity, and
+the power of music.
+</p>
+
+<p>
+<!-- Replace this section with verified career achievements -->
+Add your biography, awards, notable collaborations,
+performances, press features, and career milestones here.
+</p>
+
+<div class="stats">
+<div class="stat">
+<strong>GH</strong>
+<span>Based in Ghana</span>
+</div>
+<div class="stat">
+<strong>2+</strong>
+<span>Musical Influences</span>
+</div>
+<div class="stat">
+<strong>∞</strong>
+<span>Creative Energy</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- MEDIA GALLERY -->
+<section class="section" id="gallery">
+<div class="container">
+<div class="section-heading">
+<p class="eyebrow">Visual Experience</p>
+<h2>Media & <span class="gold">Videos</span></h2>
+<p>Music videos, behind-the-scenes moments, live performances, and press photos.</p>
+</div>
+
+<div class="gallery-grid">
+
+<article class="gallery-card">
+<a class="video-placeholder"
+href="https://www.youtube.com/"
+target="_blank" rel="noopener noreferrer"
+aria-label="Open music video placeholder">
+<img
+src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&q=85"
+alt="Live music performance">
+<span class="play-icon" aria-hidden="true">▶</span>
+</a>
+<div class="gallery-caption">
+<h3>Official Music Video</h3>
+<p>Replace with your YouTube video link.</p>
+</div>
+</article>
+
+<article class="gallery-card">
+<a class="video-placeholder"
+href="https://www.youtube.com/"
+target="_blank" rel="noopener noreferrer"
+aria-label="Open live performance placeholder">
+<img
+src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=800&q=85"
+alt="Concert crowd and stage">
+<span class="play-icon" aria-hidden="true">▶</span>
+</a>
+<div class="gallery-caption">
+<h3>Live Performance</h3>
+<p>Concerts, events, and stage highlights.</p>
+</div>
+</article>
+
+<article class="gallery-card">
+<a class="video-placeholder"
+href="https://www.youtube.com/"
+target="_blank" rel="noopener noreferrer"
+aria-label="Open behind the scenes placeholder">
+<img
+src="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&w=800&q=85"
+alt="Music recording studio">
+<span class="play-icon" aria-hidden="true">▶</span>
+</a>
+<div class="gallery-caption">
+<h3>Behind The Scenes</h3>
+<p>Studio sessions and creative moments.</p>
+</div>
+</article>
+
+<article class="gallery-card">
+<img
+src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=800&q=85"
+alt="Crowd enjoying live music">
+<div class="gallery-caption">
+<h3>On Stage</h3>
+<p>Live energy and unforgettable moments.</p>
+</div>
+</article>
+
+<article class="gallery-card">
+<img
+src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=800&q=85"
+alt="Fashion editorial photo placeholder">
+<div class="gallery-caption">
+<h3>Press & Portraits</h3>
+<p>Artist portraits and promotional images.</p>
+</div>
+</article>
+
+<article class="gallery-card">
+<img
+src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=85"
+alt="Artist with microphone">
+<div class="gallery-caption">
+<h3>Artist Lifestyle</h3>
+<p>The personality behind the music.</p>
+</div>
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- CONTACT & BOOKING -->
+<section class="section contact" id="contact">
+<div class="container">
+<div class="section-heading">
+<p class="eyebrow">Let's Work Together</p>
+<h2>Contact & <span class="gold">Booking</span></h2>
+<p>For shows, collaborations, interviews, features, and business inquiries.</p>
+</div>
+
+<div class="contact-grid">
+<div class="contact-copy">
+<h3>Bring SYLASO to Your Stage.</h3>
+
+<p>
+Have an event, collaboration, or exciting opportunity?
+Get in touch to discuss bookings and professional inquiries.
+</p>
+
+<!-- Replace with your real booking email -->
+<p>
+<strong>Email:</strong><br>
+<a class="gold" href="mailto:booking@yourdomain.com">
+booking@yourdomain.com
+</a>
+</p>
+
+<h3 style="margin-top:30px;">Follow the Journey</h3>
+
+<div class="social-links">
+<!-- Replace # with your actual profile URLs -->
+<a href="https://instagram.com/" target="_blank"
+rel="noopener noreferrer">Instagram ↗</a>
+<a href="https://tiktok.com/" target="_blank"
+rel="noopener noreferrer">TikTok ↗</a>
+<a href="https://youtube.com/" target="_blank"
+rel="noopener noreferrer">YouTube ↗</a>
+<a href="https://facebook.com/" target="_blank"
+rel="noopener noreferrer">Facebook ↗</a>
+</div>
+</div>
+
+<!-- This form opens the visitor's email app.
+For a hosted website, connect a form backend for direct submissions. -->
+<form class="booking-form"
+action="mailto:booking@yourdomain.com"
+method="post" enctype="text/plain">
+
+<div class="form-row">
+<div class="field">
+<label for="name">Full Name</label>
+<input id="name" name="Name" type="text"
+placeholder="Your name" autocomplete="name" required>
+</div>
+
+<div class="field">
+<label for="email">Email Address</label>
+<input id="email" name="Email" type="email"
+placeholder="you@example.com" autocomplete="email" required>
+</div>
+</div>
+
+<div class="form-row">
+<div class="field">
+<label for="event">Event / Inquiry Type</label>
+<input id="event" name="Inquiry Type" type="text"
+placeholder="Concert, feature, interview...">
+</div>
+
+<div class="field">
+<label for="date">Event Date</label>
+<input id="date" name="Event Date" type="date">
+</div>
+</div>
+
+<div class="field">
+<label for="message">Your Message</label>
+<textarea id="message" name="Message"
+placeholder="Tell us about your event or project..."
+required></textarea>
+</div>
+
+<button type="submit" class="btn btn-primary">
+Send Inquiry →
+</button>
+
+<p class="form-note">
+Update the booking email before publishing. For reliable
+online submissions, connect a form service or server backend.
+</p>
+</form>
+</div>
+</div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+<div class="container footer-inner">
+<a href="#top" class="logo">SYLA<span class="gold">SO</span></a>
+
+<p>
+© <span id="year"></span> SYLASO. All rights reserved.
+</p>
+
+<a href="#top" class="back-top">Back to top ↑</a>
+</div>
+</footer>
+
+<script>
+// Mobile navigation
+const menuButton = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuButton.addEventListener("click", () => {
+const isOpen = navLinks.classList.toggle("open");
+menuButton.setAttribute("aria-expanded", String(isOpen));
+menuButton.setAttribute(
+"aria-label",
+isOpen ? "Close navigation" : "Open navigation"
+);
+menuButton.textContent = isOpen ? "✕ Close" : "☰ Menu";
+});
+
+// Close mobile menu after clicking a navigation link
+navLinks.querySelectorAll("a").forEach(link => {
+link.addEventListener("click", () => {
+navLinks.classList.remove("open");
+menuButton.setAttribute("aria-expanded", "false");
+menuButton.setAttribute("aria-label", "Open navigation");
+menuButton.textContent = "☰ Menu";
+});
+});
+
+// Automatically update the copyright year
+document.getElementById("year").textContent =
+new Date().getFullYear();
+</script>
+
+</body>
+</html>
